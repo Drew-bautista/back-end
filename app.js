@@ -40,9 +40,14 @@ app.use(cors({
   credentials: true,
   origin: [
     "http://localhost:5173", // local dev
-    "https://library-book-tracker-app.windsurf.build" // deployed frontend
+    "https://library-book-tracker.windsurf.build" // deployed frontend
   ]
 }));
+
+// Default route for root URL
+app.get('/', (req, res) => {
+  res.send('Library Backend is running!');
+});
 
 app.use(cookieParser());
 
